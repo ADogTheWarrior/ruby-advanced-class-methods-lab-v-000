@@ -45,6 +45,7 @@ class Song
       placeholder = self.new
       placeholder.name = name
       @@all << placeholder
+      # Song.find_by_name(name)
     end
     placeholder
   end
