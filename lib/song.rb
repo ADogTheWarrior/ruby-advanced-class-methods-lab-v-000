@@ -58,8 +58,10 @@ class Song
   end
 
   def filename_parse_helper(name)
-    return_array = []
-    name.split("-")
+    return_array = name.split(' - ')
+    placeholder = return_array[1].split('.')
+    return_array[1] = placeholder[0]
+    return_array
   end
 
   def self.destroy_all
