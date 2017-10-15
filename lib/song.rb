@@ -69,14 +69,15 @@ class Song
     placeholder
   end
 
+  def self.destroy_all
+    @@all.clear
+  end
+
+  private
   def filename_parse_helper(name)
     return_array = name.split(' - ')
     placeholder = return_array[1].split('.')
     return_array[1] = placeholder[0]
     return_array
-  end
-
-  def self.destroy_all
-    @@all.clear
   end
 end
