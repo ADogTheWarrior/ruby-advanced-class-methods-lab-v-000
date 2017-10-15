@@ -55,6 +55,13 @@ class Song
   end
 
   def self.create_from_filename(name)
+    artistName_Name = filename_parse_helper(name)
+    
+    placeholder = self.new
+    placeholder.name = artistName_Name[1]
+    placeholder.artist_name = artistName_Name[0]
+    @@all << placeholder
+    placeholder
   end
 
   def filename_parse_helper(name)
