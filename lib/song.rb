@@ -40,11 +40,9 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    placeholder = @@all.find { |song| song.name == name }
-    if placeholder == nil
-      song = Song.find_by_name(name)
+    if Song.find_by_name(name) == nil
+      song = Song.create_by_name(name)
     end
-    placeholder
   end
 
   def self.alphabetical
