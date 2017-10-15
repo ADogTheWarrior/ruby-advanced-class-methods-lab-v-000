@@ -42,7 +42,9 @@ class Song
   def self.find_or_create_by_name(name)
     placeholder = @@all.find { |song| song.name == name }
     if placeholder == nil
-      Song.create_by_name(name)
+      placeholder = self.new
+      placeholder.name = name
+      @@all << placeholder
     end
     placeholder
   end
