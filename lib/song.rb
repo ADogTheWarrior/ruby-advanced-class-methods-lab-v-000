@@ -17,9 +17,10 @@ class Song
   end
 
   def self.new_by_name(name)
-    # placeholder = self.new
-    # placeholder.name = name
-    # @@all << placeholder
+    placeholder = self.new
+    placeholder.name = name
+    @@all << placeholder
+    placeholder
   end
 
   def self.create_by_name(name)
